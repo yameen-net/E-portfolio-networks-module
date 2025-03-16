@@ -6,8 +6,8 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 file_path = "file_to_send_udp.txt"  # Ensure this file exists and contains your text.
 
-# Record the start time before sending.
-start_time = datetime.datetime.now()
+
+
 
 with open(file_path, "rb") as f:
     while True:
@@ -15,6 +15,9 @@ with open(file_path, "rb") as f:
         if not chunk:
             break
         client_socket.sendto(chunk, server_address)
+
+# Record the start time before sending.
+start_time = datetime.datetime.now()
 
 # Send an EOF marker to signal the end of the file.
 client_socket.sendto("EOF".encode(), server_address)
