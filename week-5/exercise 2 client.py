@@ -26,3 +26,5 @@ time_taken = (end_time - start_time).total_seconds()
 print("Time taken to send data using UDP:", time_taken, "seconds")
 
 client_socket.close()
+
+
